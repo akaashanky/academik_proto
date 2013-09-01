@@ -122,15 +122,14 @@
                     <div class="span9">
                             <div class="block">
                                 <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Criteria</div>
-                                    <div class="pull-right"><a class="btn btn-mini btn-primary" href="dashboard.html">clear</a>
+                                    <div class="muted pull-left">Create custom charts</div>
+                                    <div class="pull-right"><a href="dashboard.html"><span class="badge badge-warning">Clear</span></a>
                                     </div>
                                 </div>
                                 <div class="block-content collapse in">
                                     <div class="span12">
-                                        <p class="text-info">What would you like to analyse?</p>
                                         <select onChange="showSelector($(this).val());" id="statGroupSelect">
-                                          <option selected>-</option>
+                                          <option selected>Analyse...</option>
                                           <option value="teacher">Teacher</option>
                                           <option value="class">Class</option>
                                           <option value="students">Students</option>
@@ -139,9 +138,8 @@
                                 </div>
                                 <div class="block-content collapse in hidden" id="selector_students">
                                     <div class="span12">
-                                        <p class="text-info">Which student would you like to analyse?</p>
                                         <select onChange="$('#graphSelector').removeClass('hidden');">
-                                            <option selected>-</option>
+                                            <option selected>Please select student</option>
                                           <option>Steven</option>
                                           <option>Lucas</option>
                                           <option>Phillipe</option>
@@ -160,8 +158,8 @@
                                 </div>
                                 <div class="block-content collapse in hidden" id="selector_class">
                                     <div class="span12">
-                                        <p class="text-info">Which class would you like to analyse?</p>
                                         <select onChange="$('#graphSelector').removeClass('hidden');">
+                                          <option selected>Please select class</option>
                                           <option>1</option>
                                           <option>2</option>
                                           <option>3</option>
@@ -177,9 +175,8 @@
                                 </div>
                                 <div class="block-content collapse in hidden" id="graphSelector">
                                     <div class="span12">
-                                        <p class="text-info">Please select a chart type</p>
                                         <select onChange="$('#axisSelector').removeClass('hidden');" id="chartTypeId">
-                                            <option selected>-</option>
+                                            <option selected>Please select chart type</option>
                                           <option value="bar">Bar</option>
                                           <option value="line">Line</option>
                                           <option value="pie">Pie</option>
@@ -188,21 +185,19 @@
                                 </div>
                                 <div class="block-content collapse in hidden" id="axisSelector">
                                     <div class="span12">
-                                        <p class="text-info">Please select values for X and Y Axes</p>
+                                        <p class="text-info">Please select domains for X and Y Axes</p>
                                              <div class="row-fluid"> 
                                                 <div class="span6">
-                                                    <label for="xAxis">X-Axis</label>
                                                     <select id="xAxis">
-                                                      <option selected value="-1">-</option>
-                                                      <option value="1">Scores</option>
+                                                      <option selected value="-1">X-axis</option>
+                                                      <option value="1">Subjects</option>
+                                                      <option value="2">Tests</option>
                                                     </select>
                                                 </div>
                                                  <div class="span6">
-                                                     <label for="yAxis">Y-Axis</label>
                                                     <select id="yAxis">
-                                                      <option value="-1" selected>-</option>
-                                                      <option value="1">Subjects</option>
-                                                      <option value="2">Tests</option>
+                                                      <option value="-1" selected>Y-Axis</option>
+                                                      <option value="1">Scores</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -213,7 +208,7 @@
                             
                                     <div class="navbar navbar-inner block-header">
                                             <div class="muted pull-left">Report</div>
-                                            <div class="pull-right"><a class="btn btn-mini btn-primary" onClick="renderComapareModal();">compare</a>
+                                            <div class="pull-right"><a onClick="renderComapareModal();"><span class="badge badge-warning">Compare</span></a>
                                             </div>
                                         </div>
                                         <div class="block-content collapse in">
